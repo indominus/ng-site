@@ -1,9 +1,19 @@
-<div class="card">
-  <div class="card-header">#{{joke.id}}</div>
+<div class="card" *ngIf="joke">
+  <div class="card-header">#{{joke.id}} <p class="float-right mb-0"
+                                           *ngIf="joke?.categories?.length">{{joke.categories.join(', ')}}</p></div>
   <div class="card-body">
     <p>{{joke.joke}}</p>
   </div>
   <div class="card-footer">
-    <p>{{joke.categories.join(', ')}}</p>
+    <button shareButton="facebook">Share</button>
+    <button shareButton="twitter">Tweet</button>
+    <button shareButton="pinterest">Pin</button>
+    <share-buttons [theme]="'material-dark'"
+                   [include]="['facebook','twitter','linkedin','pinterest','reddit','mix','vk','telegram','messenger','whatsapp','xing','line','sms','email','copy']"
+                   [show]="9"
+                   [size]="1"
+                   [url]="url"
+                   [autoSetMeta]="false"
+    ></share-buttons>
   </div>
 </div>

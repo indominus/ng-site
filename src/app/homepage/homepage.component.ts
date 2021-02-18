@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {URLS} from '../shared/urls';
+import {Meta, Title} from '@angular/platform-browser';
+import {Tag} from '@angular/compiler/src/i18n/serializers/xml_helper';
 
 @Component({
   selector: 'app-homepage',
@@ -11,7 +13,9 @@ export class HomepageComponent implements OnInit {
 
   jokes: any;
 
-  constructor(private httpClient: HttpClient) {
+  constructor(private meta: Meta, private title: Title, private httpClient: HttpClient) {
+    this.title.setTitle('Homepage');
+    this.meta.updateTag({name: 'description', content: 'Something descriptive'});
   }
 
   ngOnInit(): void {
