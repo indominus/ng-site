@@ -1,8 +1,0 @@
-<ul class="nav nav-pills nav-fill">
-  <li *ngFor="let holiday of holidays" class="nav-item px-2 mb-2">
-    <a class="nav-link bg-light border"
-       [routerLink]="['/', selectedCountry, 'holiday', holiday.date.datetime.day, holiday.date.datetime.month]">
-      {{holiday.name}}
-    </a>
-  </li>
-</ul>

@@ -9,13 +9,13 @@ import {URLS} from '../shared/urls';
 })
 export class HomepageComponent implements OnInit {
 
-  countries: any;
+  jokes: any;
 
   constructor(private httpClient: HttpClient) {
   }
 
   ngOnInit(): void {
-    this.httpClient.get(URLS.COUNTRIES, {params: {}}).subscribe((data: any) => this.countries = data?.response?.countries);
+    this.httpClient.get(`${URLS.JOKES}/random/10`, {params: {}}).subscribe((data: any) => this.jokes = data?.value);
   }
 
 }

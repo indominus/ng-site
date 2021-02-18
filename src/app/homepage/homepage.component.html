@@ -1,5 +1,8 @@
-<ul class="nav nav-pills nav-fill">
-  <li *ngFor="let country of countries" class="nav-item px-2 mb-2">
-    <a [routerLink]="['/', country['iso-3166'], 'holidays']" class="nav-link bg-light border">{{country.country_name}}</a>
-  </li>
-</ul>
+<div class="card">
+  <div class="card-body">
+    <ul class="list-group">
+      <li *ngFor="let joke of jokes" class="list-group-item">
+        <a [routerLink]="['joke', joke.id]" class="nav-link">{{joke.joke}}</a>
+      </li>
+    </ul>
+  </div>

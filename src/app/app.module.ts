@@ -4,26 +4,21 @@ import {BrowserModule} from '@angular/platform-browser';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {HomepageComponent} from './homepage/homepage.component';
-import {HolidaysComponent} from './holidays/holidays.component';
-import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
-import {ApiInterceptor} from './shared/api.interceptor';
-import { HolidayViewComponent } from './holiday-view/holiday-view.component';
+import {HttpClientModule} from '@angular/common/http';
+import {JokeComponent} from './joke/joke.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomepageComponent,
-    HolidaysComponent,
-    HolidayViewComponent
+    JokeComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
   ],
-  providers: [
-    {provide: HTTP_INTERCEPTORS, useClass: ApiInterceptor, multi: true}
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {

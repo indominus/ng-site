@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'https://calendarific.com/api/v2'
+  apiUrl: 'http://api.icndb.com'
 };
 
 /*
