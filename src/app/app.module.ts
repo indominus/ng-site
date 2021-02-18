@@ -8,6 +8,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {JokeComponent} from './joke/joke.component';
 import {ShareModule} from 'ngx-sharebuttons';
 import {ShareButtonsModule} from 'ngx-sharebuttons/buttons';
+import {ShareIconsModule} from 'ngx-sharebuttons/icons';
 
 @NgModule({
   declarations: [
@@ -20,10 +21,12 @@ import {ShareButtonsModule} from 'ngx-sharebuttons/buttons';
     AppRoutingModule,
     HttpClientModule,
     ShareModule,
-    ShareButtonsModule,
+    ShareButtonsModule.withConfig({debug: true}),
+    ShareIconsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {
+
 }

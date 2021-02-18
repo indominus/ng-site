@@ -5,15 +5,12 @@
     <p>{{joke.joke}}</p>
   </div>
   <div class="card-footer">
-    <button shareButton="facebook">Share</button>
-    <button shareButton="twitter">Tweet</button>
-    <button shareButton="pinterest">Pin</button>
-    <share-buttons [theme]="'material-dark'"
-                   [include]="['facebook','twitter','linkedin','pinterest','reddit','mix','vk','telegram','messenger','whatsapp','xing','line','sms','email','copy']"
-                   [show]="9"
-                   [size]="1"
-                   [url]="url"
-                   [autoSetMeta]="false"
+    <share-buttons
+      [include]="['facebook','twitter', 'pinterest']"
+      [show]="3"
+      [size]="1"
+      [url]="url"
+      [autoSetMeta]="false"
     ></share-buttons>
   </div>
 </div>
