@@ -23,7 +23,7 @@ export class JokeComponent implements OnInit {
               private activatedRoute: ActivatedRoute
   ) {
     this.id = this.activatedRoute.snapshot.paramMap.get('id');
-    this.url = this.router.url;
+    this.url = window.location.origin + this.router.url;
     this.title.setTitle(`Joke View #${this.id}`);
   }
 
@@ -33,6 +33,11 @@ export class JokeComponent implements OnInit {
       this.httpClient.get(`${URLS.JOKES}/${this.id}`, {}).subscribe((data: any) => {
         this.joke = data?.value;
         this.meta.updateTag({name: 'description', content: data?.value?.joke});
+        this.meta.updateTag({name: 'og:url', content: window.location.href});
+        this.meta.updateTag({name: 'og:type', content: 'article'});
+        this.meta.updateTag({name: 'og:title', content: `Chuck Norris Fact #${this.id}`});
+        this.meta.updateTag({name: 'og:description', content: data.value.joke});
+        this.meta.updateTag({name: 'og:images', content: `${window.location.origin}/img/chuck-norris.jpeg`});
       });
     } else {
       this.router.navigate(['/']).then(() => {
