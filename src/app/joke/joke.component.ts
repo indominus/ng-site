@@ -37,7 +37,7 @@ export class JokeComponent implements OnInit {
         this.meta.updateTag({name: 'og:type', content: 'article'});
         this.meta.updateTag({name: 'og:title', content: `Chuck Norris Fact #${this.id}`});
         this.meta.updateTag({name: 'og:description', content: data.value.joke});
-        this.meta.updateTag({name: 'og:images', content: `${window.location.origin}/img/chuck-norris.jpeg`});
+        this.meta.updateTag({name: 'og:images', content: `${window.location.origin}/assets/img/chuck-norris.jpeg`});
       });
     } else {
       this.router.navigate(['/']).then(() => {
